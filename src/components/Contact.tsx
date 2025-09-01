@@ -19,7 +19,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      value: "Open to Remote Work",
+      value: "Open to Work",
       subtitle: "Currently in Vellore, Tamil Nadu"
     }
   ];
@@ -135,7 +135,7 @@ const Contact = () => {
                     className="w-full border-border hover:bg-muted text-lg py-6" 
                     asChild
                   >
-                    <a href="/resume.pdf" download>
+                    <a href="https://drive.google.com/file/d/1IJl7fEL4CRhTFqivCe8BEA19OAoNG6qY/view?usp=drive_link" target="_blank" download>
                       <Download className="w-5 h-5 mr-3" />
                       Download Resume
                     </a>

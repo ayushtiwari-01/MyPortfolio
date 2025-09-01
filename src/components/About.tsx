@@ -16,7 +16,7 @@ const About = () => {
       institution: "CBSE Board",
       period: "2022",
       grade: "87.2%",
-      description: "Mathematics, Physics, Chemistry with Computer Science"
+      description: "Mathematics, Physics, Chemistry"
     },
     {
       degree: "Secondary Education (10th)",

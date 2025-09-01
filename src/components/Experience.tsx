@@ -5,16 +5,16 @@ import { Badge } from "@/components/ui/badge";
 const Experience = () => {
   const experiences = [
     {
-      title: "MERN Stack Web Development Intern",
+      title: "MERN Stack Web Development Intern (Remote)",
       company: "Ethnus",
-      period: "June 2023 - August 2023",
+      period: "June 2024 - July 2024",
       type: "Internship",
       description: "Developed full-stack web applications using the MERN stack, focusing on performance optimization and security implementation.",
       achievements: [
-        "Built 15+ RESTful APIs for various client applications",
-        "Reduced unauthorized access by 35% through improved authentication",
-        "Improved application load times by 40% through code optimization",
-        "Collaborated with senior developers on 3 major client projects"
+        "Designed and implemented full-stack web applications using the MERN stack, applying software development best practices.",
+        "Integrated JWT-based authentication and role-based access control, improving system security by reducing unauthorized access by 35%.",
+        "Optimized backend by refining 10+ RESTful API endpoints, lowering response latency below 200ms.",
+        "Collaborated in an agile team of 4, conducting sprint planning, peer reviews, and delivering iterative features."
       ],
       technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "JWT", "Redux"]
     }
