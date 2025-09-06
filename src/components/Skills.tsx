@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { motion, AnimatePresence } from "framer-motion";
+
+// Import icons from react-icons
+import {
+  FaJava, FaPython, FaJs, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaAws,
+} from "react-icons/fa";
+import {
+  SiC, SiCplusplus, SiExpress, SiSupabase, SiMongodb, SiTailwindcss, SiMui, SiTensorflow, SiKeras, SiPandas, SiNumpy, SiVercel,
+} from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
+import { TbApi, TbBrandBootstrap, TbBrandVscode } from "react-icons/tb";
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("programming");
@@ -9,77 +19,86 @@ const Skills = () => {
     programming: {
       title: "Programming",
       skills: [
-        { name: "Java" },
-        { name: "C" },
-        { name: "C++" },
-        { name: "Python" },
-        { name: "JavaScript (ES6+)" }
+        { name: "Java", icon: <FaJava className="h-10 w-10 text-red-500" /> },
+        { name: "Python", icon: <FaPython className="h-10 w-10 text-blue-500" /> },
+        { name: "JavaScript (ES6+)", icon: <FaJs className="h-10 w-10 text-yellow-500" /> },
+        { name: "C", icon: <SiC className="h-10 w-10 text-blue-600" /> },
+        { name: "C++", icon: <SiCplusplus className="h-10 w-10 text-blue-700" /> },
       ],
     },
     web: {
       title: "Web Development",
       skills: [
-        { name: "React.js" },
-        { name: "Node.js" },
-        { name: "Express.js" },
-        { name: "REST APIs" },
-        { name: "Supabase" },
-        { name: "MongoDB" },
-        { name: "SQL" }
+        { name: "React.js", icon: <FaReact className="h-10 w-10 text-cyan-400" /> },
+        { name: "Node.js", icon: <FaNodeJs className="h-10 w-10 text-green-500" /> },
+        { name: "Express.js", icon: <SiExpress className="h-10 w-10" /> },
+        { name: "REST APIs", icon: <TbApi className="h-10 w-10 text-green-400" /> },
+        { name: "MongoDB", icon: <SiMongodb className="h-10 w-10 text-green-600" /> },
+        { name: "SQL", icon: <GrMysql className="h-10 w-10 text-blue-500" /> },
+        { name: "Supabase", icon: <SiSupabase className="h-10 w-10 text-green-500" /> },
       ],
     },
     ui: {
       title: "UI / Styling",
       skills: [
-        { name: "HTML5" },
-        { name: "CSS3" },
-        { name: "Tailwind CSS" },
-        { name: "Bootstrap" },
-        { name: "Material UI" },
-        { name: "Shadcn UI" }
+        { name: "HTML5", icon: <FaHtml5 className="h-10 w-10 text-orange-500" /> },
+        { name: "CSS3", icon: <FaCss3Alt className="h-10 w-10 text-blue-500" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="h-10 w-10 text-cyan-500" /> },
+        { name: "Material UI", icon: <SiMui className="h-10 w-10 text-blue-600" /> },
+        { name: "Bootstrap", icon: <TbBrandBootstrap className="h-10 w-10 text-purple-600" /> },
       ],
     },
     ml: {
       title: "Machine Learning",
       skills: [
-        { name: "TensorFlow" },
-        { name: "Keras" },
-        { name: "Neural Networks" },
-        { name: "Pandas" },
-        { name: "NumPy" }
+        { name: "TensorFlow", icon: <SiTensorflow className="h-10 w-10 text-orange-500" /> },
+        { name: "Keras", icon: <SiKeras className="h-10 w-10 text-red-600" /> },
+        { name: "Pandas", icon: <SiPandas className="h-10 w-10 text-indigo-500" /> },
+        { name: "NumPy", icon: <SiNumpy className="h-10 w-10 text-blue-400" /> },
       ],
     },
     devops: {
       title: "DevOps & Tools",
       skills: [
-        { name: "Git" },
-        { name: "GitHub" },
-        { name: "GitHub Actions" },
-        { name: "Postman" },
-        { name: "CI/CD" },
-        { name: "Agile Development" }
+        { name: "Git", icon: <FaGitAlt className="h-10 w-10 text-orange-600" /> },
+        { name: "GitHub", icon: <FaGithub className="h-10 w-10" /> },
+        { name: "CI/CD", icon: <FaGithub className="h-10 w-10" /> },
+        { name: "Postman", icon: <TbApi className="h-10 w-10 text-orange-500" /> },
       ],
     },
     cloud: {
       title: "Cloud & Deployment",
       skills: [
-        { name: "AWS" },
-        { name: "Vercel" },
-        { name: "Render" }
+        { name: "AWS", icon: <FaAws className="h-10 w-10 text-orange-500" /> },
+        { name: "Vercel", icon: <SiVercel className="h-10 w-10" /> },
+        { name: "Render", icon: <TbBrandVscode className="h-10 w-10 text-cyan-400" /> },
       ],
     },
     cs: {
       title: "Core CS",
       skills: [
-        { name: "Data Structures and Algorithms" },
-        { name: "Object-Oriented Programming" },
-        { name: "Computer Networks" },
-        { name: "DBMS" }
+        { name: "Data Structures & Algorithms", icon: <FaReact className="h-10 w-10" /> },
+        { name: "Object-Oriented Programming", icon: <FaJava className="h-10 w-10" /> },
+        { name: "Computer Networks", icon: <TbApi className="h-10 w-10" /> },
+        { name: "DBMS", icon: <GrMysql className="h-10 w-10" /> },
       ],
-    }
+    },
   };
 
   const categories = Object.keys(skillCategories);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
 
   return (
     <section id="skills" className="py-20 bg-skill-bg">
@@ -90,69 +109,47 @@ const Skills = () => {
             A comprehensive toolkit for building modern, scalable applications
           </p>
         </div>
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative px-5 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
                 activeCategory === category
                   ? "gradient-primary text-white shadow-glow"
-                  : "bg-white/80 backdrop-blur-sm text-muted-foreground hover:bg-white hover:text-foreground shadow-medium"
+                  : "bg-card/50 backdrop-blur-sm text-muted-foreground hover:bg-card hover:text-foreground shadow-sm"
               }`}
             >
-              <span className="relative z-10">{skillCategories[category].title}</span>
-              {activeCategory !== category && (
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              )}
+              {skillCategories[category].title}
             </button>
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="animate-fade-in">
-          <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-            {skillCategories[activeCategory].title}
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skillCategories[activeCategory].skills.map((skill, index) => (
-              <Card 
-                key={index} 
-                className="group relative overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 cursor-pointer animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="p-6 relative z-10">
-                  <span className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeCategory}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6"
+          >
+            <h3 className="col-span-full text-2xl font-semibold text-foreground mb-4 text-center">
+              {skillCategories[activeCategory].title}
+            </h3>
+            {skillCategories[activeCategory].skills.map((skill) => (
+              <motion.div key={skill.name} variants={itemVariants}>
+                <Card className="group relative flex flex-col items-center justify-center p-6 h-full bg-card/50 backdrop-blur-sm transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary hover:shadow-glow hover:scale-105">
+                  <div className="mb-4">{skill.icon}</div>
+                  <span className="font-semibold text-center text-foreground group-hover:text-primary transition-colors duration-300">
                     {skill.name}
                   </span>
-                </div>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
-          </div>
-        </div>
-
-        {/* Additional Skills */}
-        <div className="mt-16 text-center">
-          <h4 className="text-xl font-semibold text-foreground mb-8">
-            Additional Technologies & Concepts
-          </h4>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "CI/CD", "Agile Development", "Data Structures", 
-              "Algorithms", "Object-Oriented Programming", "Computer Networks", "DBMS"
-            ].map((tech, index) => (
-              <Badge 
-                key={index} 
-                variant="outline" 
-                className="px-4 py-2 text-sm hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 cursor-pointer hover:scale-105"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {tech}
-              </Badge>
-            ))}
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

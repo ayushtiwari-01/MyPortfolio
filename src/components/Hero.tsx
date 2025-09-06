@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Download, Mail, Github, Linkedin, ChevronDown } from "lucide-react";
+import { Mail, Github, Linkedin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 
 const Hero = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -10,6 +11,7 @@ const Hero = () => {
     "Tech Innovator"
   ];
 
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
@@ -17,21 +19,26 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+
   const scrollToProjects = () => {
     document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
   };
+
 
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+
   const openResume = () => {
     window.open("https://drive.google.com/file/d/1IJl7fEL4CRhTFqivCe8BEA19OAoNG6qY/view?usp=sharing", "_blank");
   };
 
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center gradient-hero relative">
+    <section id="home" className="min-h-screen flex items-center justify-center gradient-hero relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+
 
       {/* Floating particles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -42,6 +49,7 @@ const Hero = () => {
         <div className="absolute bottom-40 right-1/3 w-2.5 h-2.5 bg-sky-400/30 rounded-full animate-float-2"></div>
       </div>
 
+
       {/* Geometric shapes background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-primary rotate-45 animate-spin-slow"></div>
@@ -49,11 +57,13 @@ const Hero = () => {
         <div className="absolute top-1/2 right-1/3 w-16 h-16 border-2 border-sky-500 rounded-full animate-bounce-slow"></div>
       </div>
 
+
       {/* Dot pattern background */}
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.3) 1px, transparent 0)`,
         backgroundSize: '20px 20px'
       }}></div>
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="text-center animate-fade-in">
@@ -71,6 +81,7 @@ const Hero = () => {
             </div>
           </div>
 
+
           {/* Main Heading with animated underline */}
           <h1 className="heading-xl text-foreground mb-6 relative">
             Hi, I'm <span className="text-gradient relative">
@@ -79,7 +90,8 @@ const Hero = () => {
             </span>
           </h1>
 
-          {/* Animated Tagline with typewriter effect - FIXED */}
+
+          {/* Animated Tagline with typewriter effect */}
           <div className="mb-8">
             <p className="text-xl md:text-2xl text-muted-foreground mb-4">
               Aspiring Software Developer
@@ -91,11 +103,13 @@ const Hero = () => {
             </div>
           </div>
 
+
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Passionate about building innovative web applications with modern technologies. 
+            Passionate about building innovative web applications with modern technologies.
             Specializing in MERN stack development and exploring the exciting world of AI and machine learning.
           </p>
+
 
           {/* CTA Buttons with glassmorphism and hover effects */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -111,7 +125,7 @@ const Hero = () => {
               variant="outline-hero"
               size="lg"
               onClick={scrollToContact}
-              className="text-lg px-8 py-3 backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
+              className="text-lg px-8 py-3 backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 hover:text-foreground transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
             >
               Contact Me
             </Button>
@@ -119,44 +133,44 @@ const Hero = () => {
               variant="outline-hero"
               size="lg"
               onClick={openResume}
-              className="text-lg px-8 py-3 backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
+              className="text-lg px-8 py-3 backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 hover:text-foreground transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:-translate-y-1"
             >
               Resume
             </Button>
           </div>
 
+
           {/* Enhanced Social Links with interactive hover effects */}
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="mailto:tiwariayush2507@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=tiwariayush2507@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email Ayush Tiwari"
               className="group p-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:from-white/20 hover:to-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl"
             >
-              <Mail className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+              <Mail className="w-6 h-6 text-primary group-hover:text-foreground transition-colors duration-300" />
             </a>
             <a
               href="https://github.com/ayushtiwari-01"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="group p-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:from-white/20 hover:to-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl"
             >
-              <Github className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+              <Github className="w-6 h-6 text-primary group-hover:text-foreground transition-colors duration-300" />
             </a>
             <a
               href="https://www.linkedin.com/in/ayush-tiwariii/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="group p-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:from-white/20 hover:to-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl"
             >
-              <Linkedin className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-            </a>
-            <a
-              href="/resume.pdf"
-              download
-              className="group p-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 hover:from-white/20 hover:to-white/10 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:shadow-xl"
-            >
-              <Download className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+              <Linkedin className="w-6 h-6 text-primary group-hover:text-foreground transition-colors duration-300" />
             </a>
           </div>
+
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -168,4 +182,6 @@ const Hero = () => {
   );
 };
 
+
 export default Hero;
+
