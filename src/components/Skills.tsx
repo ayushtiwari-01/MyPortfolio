@@ -3,67 +3,83 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState("frontend");
+  const [activeCategory, setActiveCategory] = useState("programming");
 
   const skillCategories = {
-    frontend: {
-      title: "Frontend Development",
+    programming: {
+      title: "Programming",
       skills: [
-        { name: "React.js", level: 90, color: "hsl(216 98% 52%)" },
-        { name: "TypeScript", level: 85, color: "hsl(216 98% 52%)" },
-        { name: "JavaScript", level: 90, color: "hsl(216 98% 52%)" },
-        { name: "HTML/CSS", level: 95, color: "hsl(216 98% 52%)" },
-        { name: "Tailwind CSS", level: 88, color: "hsl(216 98% 52%)" },
-        { name: "Redux", level: 80, color: "hsl(216 98% 52%)" }
-      ]
+        { name: "Java" },
+        { name: "C" },
+        { name: "C++" },
+        { name: "Python" },
+        { name: "JavaScript (ES6+)" }
+      ],
     },
-    backend: {
-      title: "Backend Development", 
+    web: {
+      title: "Web Development",
       skills: [
-        { name: "Node.js", level: 85, color: "hsl(271 81% 56%)" },
-        { name: "Express.js", level: 90, color: "hsl(271 81% 56%)" },
-        { name: "REST APIs", level: 88, color: "hsl(271 81% 56%)" },
-        { name: "GraphQL", level: 70, color: "hsl(271 81% 56%)" },
-        { name: "JWT Authentication", level: 85, color: "hsl(271 81% 56%)" },
-        { name: "API Testing", level: 80, color: "hsl(271 81% 56%)" }
-      ]
+        { name: "React.js" },
+        { name: "Node.js" },
+        { name: "Express.js" },
+        { name: "REST APIs" },
+        { name: "Supabase" },
+        { name: "MongoDB" },
+        { name: "SQL" }
+      ],
     },
-    database: {
-      title: "Databases",
+    ui: {
+      title: "UI / Styling",
       skills: [
-        { name: "MongoDB", level: 88, color: "hsl(142 71% 45%)" },
-        { name: "MySQL", level: 80, color: "hsl(142 71% 45%)" },
-        { name: "PostgreSQL", level: 75, color: "hsl(142 71% 45%)" },
-        { name: "Redis", level: 65, color: "hsl(142 71% 45%)" },
-        { name: "Database Design", level: 82, color: "hsl(142 71% 45%)" },
-        { name: "Query Optimization", level: 70, color: "hsl(142 71% 45%)" }
-      ]
+        { name: "HTML5" },
+        { name: "CSS3" },
+        { name: "Tailwind CSS" },
+        { name: "Bootstrap" },
+        { name: "Material UI" },
+        { name: "Shadcn UI" }
+      ],
     },
     ml: {
       title: "Machine Learning",
       skills: [
-        { name: "Python", level: 85, color: "hsl(45 93% 47%)" },
-        { name: "TensorFlow", level: 75, color: "hsl(45 93% 47%)" },
-        { name: "Scikit-learn", level: 80, color: "hsl(45 93% 47%)" },
-        { name: "Pandas", level: 85, color: "hsl(45 93% 47%)" },
-        { name: "NumPy", level: 82, color: "hsl(45 93% 47%)" },
-        { name: "Data Analysis", level: 78, color: "hsl(45 93% 47%)" }
-      ]
+        { name: "TensorFlow" },
+        { name: "Keras" },
+        { name: "Neural Networks" },
+        { name: "Pandas" },
+        { name: "NumPy" }
+      ],
     },
-    tools: {
-      title: "Tools & DevOps",
+    devops: {
+      title: "DevOps & Tools",
       skills: [
-        { name: "Git", level: 90, color: "hsl(0 72% 51%)" },
-        { name: "Docker", level: 70, color: "hsl(0 72% 51%)" },
-        { name: "AWS", level: 75, color: "hsl(0 72% 51%)" },
-        { name: "Linux", level: 80, color: "hsl(0 72% 51%)" },
-        { name: "VS Code", level: 95, color: "hsl(0 72% 51%)" },
-        { name: "Postman", level: 88, color: "hsl(0 72% 51%)" }
-      ]
+        { name: "Git" },
+        { name: "GitHub" },
+        { name: "GitHub Actions" },
+        { name: "Postman" },
+        { name: "CI/CD" },
+        { name: "Agile Development" }
+      ],
+    },
+    cloud: {
+      title: "Cloud & Deployment",
+      skills: [
+        { name: "AWS" },
+        { name: "Vercel" },
+        { name: "Render" }
+      ],
+    },
+    cs: {
+      title: "Core CS",
+      skills: [
+        { name: "Data Structures and Algorithms" },
+        { name: "Object-Oriented Programming" },
+        { name: "Computer Networks" },
+        { name: "DBMS" }
+      ],
     }
   };
 
-  const categories = Object.keys(skillCategories) as (keyof typeof skillCategories)[];
+  const categories = Object.keys(skillCategories);
 
   return (
     <section id="skills" className="py-20 bg-skill-bg">
@@ -74,7 +90,6 @@ const Skills = () => {
             A comprehensive toolkit for building modern, scalable applications
           </p>
         </div>
-
         {/* Category Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
@@ -98,52 +113,20 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="animate-fade-in">
           <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">
-            {skillCategories[activeCategory as keyof typeof skillCategories].title}
+            {skillCategories[activeCategory].title}
           </h3>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {skillCategories[activeCategory as keyof typeof skillCategories].skills.map((skill, index) => (
+            {skillCategories[activeCategory].skills.map((skill, index) => (
               <Card 
                 key={index} 
                 className="group relative overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105 cursor-pointer animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="p-6 relative z-10">
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                      {skill.name}
-                    </span>
-                    <div className="w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  
-                  {/* Skill level indicator bars */}
-                  <div className="mt-4 flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div 
-                        key={i}
-                        className={`h-1 flex-1 rounded-full transition-all duration-500 ${
-                          i < Math.floor(skill.level / 20) 
-                            ? 'bg-primary opacity-100' 
-                            : 'bg-muted opacity-30'
-                        }`}
-                        style={{ 
-                          transitionDelay: `${index * 0.1 + i * 0.05}s` 
-                        }}
-                      />
-                    ))}
-                  </div>
+                  <span className="font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                    {skill.name}
+                  </span>
                 </div>
-                
-                {/* Gradient overlay */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                  style={{
-                    background: `linear-gradient(135deg, ${skill.color}20, ${skill.color}10)`
-                  }}
-                />
-                
-                {/* Animated border */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-colors duration-300" />
               </Card>
             ))}
           </div>
@@ -156,9 +139,8 @@ const Skills = () => {
           </h4>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "Responsive Design", "RESTful APIs", "Microservices", "Agile Development",
-              "Test-Driven Development", "CI/CD", "Clean Code", "Data Structures",
-              "Algorithms", "Object-Oriented Programming", "Functional Programming"
+              "CI/CD", "Agile Development", "Data Structures", 
+              "Algorithms", "Object-Oriented Programming", "Computer Networks", "DBMS"
             ].map((tech, index) => (
               <Badge 
                 key={index} 

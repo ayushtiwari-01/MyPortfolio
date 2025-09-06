@@ -7,16 +7,16 @@ const Experience = () => {
     {
       title: "MERN Stack Web Development Intern (Remote)",
       company: "Ethnus",
-      period: "June 2024 - July 2024",
+      period: "Jun 2024 – Jul 2024",
       type: "Internship",
-      description: "Developed full-stack web applications using the MERN stack, focusing on performance optimization and security implementation.",
-      achievements: [
+      description:
         "Designed and implemented full-stack web applications using the MERN stack, applying software development best practices.",
-        "Integrated JWT-based authentication and role-based access control, improving system security by reducing unauthorized access by 35%.",
-        "Optimized backend by refining 10+ RESTful API endpoints, lowering response latency below 200ms.",
+      achievements: [
+        "Integrated JWT-based authentication and role-based access control, improving system security by reducing unauthorized access by 99%.",
+        "Optimized backend by refining 10+ RESTful API endpoints to enhance backend efficiency and scalability.",
         "Collaborated in an agile team of 4, conducting sprint planning, peer reviews, and delivering iterative features."
       ],
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "JWT", "Redux"]
+      technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "JWT"]
     }
   ];
 
